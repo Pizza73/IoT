@@ -12,7 +12,7 @@ import json
 import pygame
 from pygame.locals import *
 import sys
-from . import ID
+from .. import ID
 
 def main():
     pygame.init()
