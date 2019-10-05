@@ -10,11 +10,13 @@ import RPi.GPIO as GPIO
 import time
 
 def main():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(32,GPIO.IN)
-    val=GPIO.input(32)
-    print(val)
-    time.sleep(2)
+    while True:
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(32,GPIO.IN)
+        val=GPIO.input(32)
+        print(val)
+        time.sleep(2)
+    
     
     
 if __name__=='__main__':
