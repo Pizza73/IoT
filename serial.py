@@ -9,7 +9,7 @@ Created on Tue Jan  7 23:26:32 2020
 import serial
 import time
 
-ser=serial.Serial('/dev/ttyACM0',19200)
+ser=serial.Serial('/dev/ttyUSB0',19200)
 
 for i in range(10):
     ser.write('64')
