@@ -12,7 +12,7 @@ import json
 import pygame
 from pygame.locals import *
 import sys
-from .Python import ID
+#from .Python import ID
 
 def main():
     pygame.init()
@@ -22,7 +22,7 @@ def main():
     # Rainfall from yahoo
     BASE_URL_yahoo='https://map.yahooapis.jp/weather/V1/place'
 
-    APP_ID=ID.APP_ID    #Yahoo developer ID
+    APP_ID='dj00aiZpPXhoZkFqSkgyRzRBcyZzPWNvbnN1bWVyc2VjcmV0Jng9OTI-'    #Yahoo developer ID
     COORDINATES='135.628998,34.769208' #'135.628998,34.769208'
     OUTPUT='json'
     url_yahoo=BASE_URL_yahoo+'?appid=%s&coordinates=%s&output=%s' % (APP_ID,COORDINATES,OUTPUT)
