@@ -12,7 +12,7 @@ import time
 ser=serial.Serial('/dev/ttyUSB0',19200)
 
 for i in range(10):
-    ser.write('64')
+    ser.write(b'128')
     time.sleep(0.5)
     
 ser.close()

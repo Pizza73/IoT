@@ -11,7 +11,7 @@ import time
 
 #ser=serial.Serial('/dev/serial/by-path/pci-0000:00:14.0-usb-0:3:1.0-port0',9600)
 
-ser=serial.Serial('/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0',9600,bytesize=serial.SEVENBITS)
+ser=serial.Serial('/dev/ttyUSB0',9600,bytesize=serial.SEVENBITS)
 
 
 while True:
