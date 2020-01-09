@@ -12,6 +12,10 @@ import json
 import pygame
 from pygame.locals import *
 import sys
+import os
+import seeed_dht
+import time
+
 #from .Python import ID
 
 def main():
@@ -33,6 +37,8 @@ def main():
     url_wh=BASE_URL_wh+'?city=%s' % (CITY)
     
     font=pygame.font.Font(None,20)
+    sensor = seeed_dht.DHT("11", 12)
+
     
     while (1):
         #get the weather imformation

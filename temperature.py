@@ -17,6 +17,9 @@ def main():
 
     while True:
         humi, temp = sensor.read()
+        print('----------------------')
+        print('temperature=',temp)
+        print('humid=',humi)
         if not humi is None:
             print('DHT{0}, humidity {1:.1f}%, temperature {2:.1f}*'.format(sensor.dht_type, humi, temp))
         else:
