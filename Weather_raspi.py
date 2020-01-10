@@ -47,7 +47,7 @@ def main():
     
     #pin setting
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(32,GPIO.IN)
+#    GPIO.setup(32,GPIO.IN)
 
     
     while (1):
