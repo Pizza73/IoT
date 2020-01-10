@@ -135,6 +135,11 @@ def main():
         #WBGT判定、通知、窓開閉
         if Rainfall[1]>0 or wbgt >= 28:
             os.system('./LINE_close.sh')
+            if wbgt >=28:
+                os.system('cd /home/pi/bto_ir_advanded_cmd')
+                os.system('./send_ir cooler_27.txt')
+                os.system('cd /home/pi/Documents/IoT')
+                
             while(val):
                 data='128'
                 ser.write(bytes(data,'UTF-8'))
@@ -142,11 +147,13 @@ def main():
             data='0'
             ser.write(bytes(data,'UTF-8'))
             
-            if wbgt >=28:
-                os.system('')
+            
             
         elif Rainfall[1] <=0 and wbgt < 28:
             os.system('./LINE_open.sh')
+            os.system('cd /home/pi/bto_ir_advanded_cmd')
+            os.system('./send_ir Air_off.txt')
+            os.system('cd /home/pi/Documents/IoT')
             while(not val):
                 data='255'
                 ser.write(bytes(data,'UTF-8'))
@@ -154,7 +161,6 @@ def main():
             data='0'
             ser.write(bytes(data,'UTF-8'))
             
-
         
         # イベント処理
         for event in pygame.event.get():
