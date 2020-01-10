@@ -163,7 +163,7 @@ def main():
         elif Rainfall[1] <=0 and wbgt < 28:
             os.system('aplay rain_stop.wav')
             os.system('./LINE_open.sh')
-            os.system('cd /home/pi/bto_ir_advanded_cmd')
+            os.system("cd /home/pi/bto_ir_advanded_cmd")
             os.system('./send_ir Air_off.txt')
             os.system('cd /home/pi/Documents/IoT')
 #            while(not val):
