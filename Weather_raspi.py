@@ -192,8 +192,8 @@ def main():
 #        text4=font.render(HUMID,True(0,0,0))
         screen.blit(text1,[350,10])
         screen.blit(text2,[350,30])
-        screen.blit(text3,[350,50])
-        screen.blit(text4,[350,70])
+#        screen.blit(text3,[350,50])
+#        screen.blit(text4,[350,70])
         pygame.display.update()
         pygame.time.wait(60000)                                    
             
