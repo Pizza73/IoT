@@ -133,9 +133,11 @@ def main():
                 img = pygame.image.load('/home/pi/Documents/Python/cloudy.png') 
 
         #WBGT判定、通知、窓開閉
-        if Rainfall[1]>0 or wbgt >= 28:
+        if Rainfall[1]>0:
             os.system('./LINE_close.sh')
+            os.system('apley /home/pi/Documents/IoT/rainy.wav')
             if wbgt >=28:
+                os.system('aplay /home/pi/Documents/IoT/heatstroke.wav')
                 os.system('cd /home/pi/bto_ir_advanded_cmd')
                 os.system('./send_ir cooler_27.txt')
                 os.system('cd /home/pi/Documents/IoT')
@@ -150,6 +152,7 @@ def main():
             
             
         elif Rainfall[1] <=0 and wbgt < 28:
+            os.system('aplay rain_stop.wav')
             os.system('./LINE_open.sh')
             os.system('cd /home/pi/bto_ir_advanded_cmd')
             os.system('./send_ir Air_off.txt')
