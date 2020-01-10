@@ -188,8 +188,8 @@ def main():
         screen.blit(img,(0,0))  #座標指定
         text1=font.render(weather,True,(0,0,0)) #色指定
         text2=font.render(Raining,True,(0,0,0))
-        text3=font.render(TEMPERATURE,True(0,0,0))
-        text4=font.render(HUMID,True(0,0,0))
+#        text3=font.render(TEMPERATURE,True(0,0,0))
+#        text4=font.render(HUMID,True(0,0,0))
         screen.blit(text1,[350,10])
         screen.blit(text2,[350,30])
         screen.blit(text3,[350,50])
