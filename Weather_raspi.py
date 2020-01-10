@@ -46,7 +46,7 @@ def main():
     ser=serial.Serial('/dev/ttyUSB0',9600,bytesize=serial.SEVENBITS)
     
     #pin setting
-    GPIO.setmode(GPIO.BOARD)
+#    GPIO.setmode(GPIO.BOARD)
 #    GPIO.setup(32,GPIO.IN)
 
     
