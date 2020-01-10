@@ -59,7 +59,7 @@ def main():
         print('WBGT=',wbgt)
         
         #get infrared sensor
-        val=GPIO.input(32)
+#        val=GPIO.input(32)
         
         #get the weather imformation
         html=requests.get(url_yahoo).json()
