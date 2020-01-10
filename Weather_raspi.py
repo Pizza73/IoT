@@ -53,8 +53,8 @@ def main():
     while (1):
         #get temperature 
         humid, temperature = sensor.read()
-        HUMID='湿度：'+humid
-        TEMPERATURE='温度：'+temperature
+        HUMID='湿度：'+str(humid)
+        TEMPERATURE='温度：'+str(temperature)
         wbgt=WBGT.WBGT(humid,temperature)
         print('WBGT=',wbgt)
         
