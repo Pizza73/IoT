@@ -15,6 +15,8 @@ import sys
 import os
 import seeed_dht
 import time
+import WBGT
+import serial
 
 #from .Python import ID
 
@@ -37,7 +39,14 @@ def main():
     url_wh=BASE_URL_wh+'?city=%s' % (CITY)
     
     font=pygame.font.Font(None,20)
+    #temperature
     sensor = seeed_dht.DHT("11", 12)
+    #serial
+    ser=serial.Serial('/dev/ttyUSB0',9600,bytesize=serial.SEVENBITS)
+    
+    #pin setting
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(32,GPIO.IN)
 
     
     while (1):
@@ -45,6 +54,10 @@ def main():
         humid, temperature = sensor.read()
         HUMID='湿度：'+humid
         TEMPERATURE='温度：'+temperature
+        wbgt=WBGT.WBGT(humid,temperature)
+        
+        #get infrared sensor
+        val=GPIO.input(32)
         
         #get the weather imformation
         html=requests.get(url_yahoo).json()
@@ -118,6 +131,30 @@ def main():
                 img = pygame.image.load('/home/pi/Documents/Python/caution2.png') 
             else:
                 img = pygame.image.load('/home/pi/Documents/Python/cloudy.png') 
+
+        #WBGT判定、通知、窓開閉
+        if Rainfall[1]>0 or wbgt >= 28:
+            os.system('./LINE_close.sh')
+            while(val):
+                data='128'
+                ser.write(bytes(data,'UTF-8'))
+                print('forward')
+            data='0'
+            ser.write(bytes(data,'UTF-8'))
+            
+            if wbgt >=28:
+                os.system('')
+            
+        elif Rainfall[1] <=0 and wbgt < 28:
+            os.system('./LINE_open.sh')
+            while(not val):
+                data='255'
+                ser.write(bytes(data,'UTF-8'))
+                print('backward')
+            data='0'
+            ser.write(bytes(data,'UTF-8'))
+            
+
         
         # イベント処理
         for event in pygame.event.get():
