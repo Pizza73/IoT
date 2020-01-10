@@ -55,6 +55,7 @@ def main():
         HUMID='湿度：'+humid
         TEMPERATURE='温度：'+temperature
         wbgt=WBGT.WBGT(humid,temperature)
+        print('WBGT=',wbgt)
         
         #get infrared sensor
         val=GPIO.input(32)
