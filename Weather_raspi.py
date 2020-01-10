@@ -92,47 +92,47 @@ def main():
                 weather='partly cloudy'
                 print('Partly cloudy')
                 if Rainfall[1]>0:
-                    img = pygame.image.load('/home/pi/Documents/Python/caution2.png') 
+                    img = pygame.image.load('/home/pi/Documents/IoT/caution2.png') 
                 else:
-                    img = pygame.image.load('/home/pi/Documents/Python/partly_cloudy.png') #partly_cloudy.png
+                    img = pygame.image.load('/home/pi/Documents/IoT/partly_cloudy.png') #partly_cloudy.png
             elif '雨' in weather:
                 weather='sunny and rainy'
                 print('sandr')
                 if Rainfall[1]>0:
-                    img = pygame.image.load('/home/pi/Documents/Python/caution2.png') 
+                    img = pygame.image.load('/home/pi/Documents/IoT/caution2.png') 
                 else:
-                    img = pygame.image.load('/home/pi/Documents/Python/sandr.png') 
+                    img = pygame.image.load('/home/pi/Documents/IoT/sandr.png') 
             else:
                 weather='sunny'
                 print('Sunny')
                 if Rainfall[1]>0:
-                    img = pygame.image.load('/home/pi/Documents/Python/caution2.png') 
+                    img = pygame.image.load('/home/pi/Documents/IoT/caution2.png') 
                 else:
-                    img = pygame.image.load('/home/pi/Documents/Python/sunny.png')
+                    img = pygame.image.load('/home/pi/Documents/IoT/sunny.png')
 
         elif '雨' in weather:
             if '曇' in weather:
                 weather='cloudy and rainy'
                 print('Partly rainy')
                 if Rainfall[1]>0:
-                    img = pygame.image.load('/home/pi/Documents/Python/caution2.png') 
+                    img = pygame.image.load('/home/pi/Documents/IoT/caution2.png') 
                 else:
-                    img = pygame.image.load('/home/pi/Documents/Python/partly_rainy.png')
+                    img = pygame.image.load('/home/pi/Documents/IoT/partly_rainy.png')
             else:
                 weather='rainy'
                 print('rainy')
                 if Rainfall[1]>0:
-                    img = pygame.image.load('/home/pi/Documents/Python/caution2.png') 
+                    img = pygame.image.load('/home/pi/Documents/IoT/caution2.png') 
                 else:
-                    img = pygame.image.load('/home/pi/Documents/Python/rainy.png') 
+                    img = pygame.image.load('/home/pi/Documents/IoT/rainy.png') 
         
         else:
             weather='cloudy'
             print('cloudy')
             if Rainfall[1]>0:
-                img = pygame.image.load('/home/pi/Documents/Python/caution2.png') 
+                img = pygame.image.load('/home/pi/Documents/IoT/caution2.png') 
             else:
-                img = pygame.image.load('/home/pi/Documents/Python/cloudy.png') 
+                img = pygame.image.load('/home/pi/Documents/IoT/cloudy.png') 
 
         #WBGT判定、通知、窓開閉
         if Rainfall[1]>0:
