@@ -142,10 +142,15 @@ def main():
                 os.system('./send_ir cooler_27.txt')
                 os.system('cd /home/pi/Documents/IoT')
                 
-            while(val):
-                data='128'
-                ser.write(bytes(data,'UTF-8'))
-                print('forward')
+#            while(val):
+#                data='128'
+#                ser.write(bytes(data,'UTF-8'))
+#                print('forward')
+                
+            data='128'
+            ser.write(bytes(data,'UTF-8'))
+            print('forward')
+            time.sleep(10)
             data='0'
             ser.write(bytes(data,'UTF-8'))
             
@@ -157,10 +162,14 @@ def main():
             os.system('cd /home/pi/bto_ir_advanded_cmd')
             os.system('./send_ir Air_off.txt')
             os.system('cd /home/pi/Documents/IoT')
-            while(not val):
-                data='255'
-                ser.write(bytes(data,'UTF-8'))
-                print('backward')
+#            while(not val):
+#                data='255'
+#                ser.write(bytes(data,'UTF-8'))
+#                print('backward')
+            data='255'
+            ser.write(bytes(data,'UTF-8'))
+            print('backward')
+            time.sleep(10)
             data='0'
             ser.write(bytes(data,'UTF-8'))
             
