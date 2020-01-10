@@ -142,9 +142,9 @@ def main():
             os.system('apley /home/pi/Documents/IoT/rainy.wav')
             if wbgt >=28:
                 os.system('aplay /home/pi/Documents/IoT/heatstroke.wav')
-                os.system('cd /home/pi/bto_ir_advanded_cmd')
+                os.chdir('/home/pi/bto_ir_advanced_cmd')
                 os.system('./send_ir cooler_27.txt')
-                os.system('cd /home/pi/Documents/IoT')
+                os.chdir('/home/pi/Documents/IoT')
                 
 #            while(val):
 #                data='128'
@@ -163,9 +163,9 @@ def main():
         elif Rainfall[1] <=0 and wbgt < 28:
             os.system('aplay rain_stop.wav')
             os.system('./LINE_open.sh')
-            os.system("cd /home/pi/bto_ir_advanded_cmd")
+            os.chdir("/home/pi/bto_ir_advanced_cmd")
             os.system('./send_ir Air_off.txt')
-            os.system('cd /home/pi/Documents/IoT')
+            os.chdir('/home/pi/Documents/IoT')
 #            while(not val):
 #                data='255'
 #                ser.write(bytes(data,'UTF-8'))
