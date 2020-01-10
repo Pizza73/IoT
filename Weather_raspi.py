@@ -17,6 +17,7 @@ import seeed_dht
 import time
 import WBGT
 import serial
+import RPi.GPIO as GPIO
 
 #from .Python import ID
 
