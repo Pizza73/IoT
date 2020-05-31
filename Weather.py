@@ -98,5 +98,7 @@ def weather1():
     
     root.after(10000,weather1)
     
+    import LINE_rainfall
+    
 weather1()
 root.mainloop()
